@@ -1,6 +1,6 @@
 import React from "react";
-import "./App.css"; 
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import "./App.css";
+import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 import HomePage from "./pages/HomePage";
 import LoginForm from "./components/LoginForm";
 import TheftReportForm from "./components/TheftReportForm";
@@ -14,6 +14,10 @@ const App = () => {
   return (
     <Router>
       <div className="container">
+        <nav className="navbar">
+          <Link to="/">Главная</Link>
+          <Link to="/report-theft">Сообщить о краже</Link>
+        </nav>
         <Routes>
           <Route path="/" element={<HomePage />} />
           <Route path="/login" element={<LoginForm />} />
