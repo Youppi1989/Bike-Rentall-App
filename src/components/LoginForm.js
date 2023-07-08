@@ -21,7 +21,7 @@ const LoginForm = () => {
         Пароль:
         <input type="password" required />
       </label>
-      <button type="button-login">Войти</button>
+      <button type="button-login">Войти </button>
     </form>
   );
 };
