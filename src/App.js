@@ -16,7 +16,7 @@ const App = () => {
       <div className="container">
         <nav className="navbar">
           <Link to="/">Главная</Link>
-          <Link to="/report-theft">Сообщить о краже</Link>
+          <Link to="/report-theft">Сообщиь о краже</Link>
         </nav>
         <Routes>
           <Route path="/" element={<HomePage />} />
