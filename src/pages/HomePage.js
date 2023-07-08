@@ -13,6 +13,8 @@ const HomePage = () => {
         <RegistrationPage />
       </div>
       <Link to="/report-theft">Сообщить о краже</Link>
+      <br />
+      <Link to="/theft-reports">Просмотреть отчеты о кражах</Link> {/* Добавленная строка */}
     </div>
   );
 };
