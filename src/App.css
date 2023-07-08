@@ -1,3 +1,5 @@
+/* styles.css */
+
 body {
   font-family: Arial, sans-serif;
   margin: 0;
@@ -54,7 +56,61 @@ p {
 .button {
   padding: 10px 20px;
   background-color: #00a300;
-  color: #fff;
+  color: green;
   border: none;
   cursor: pointer;
 }
+
+.button:hover {
+  background-color: #009200;
+}
+
+.button:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-row {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.form-row label {
+  margin-right: 10px;
+}
+
+.button-submit {
+  background-color: #00a300;
+}
+
+.button-submit:hover {
+  background-color: #009200;
+}
+
+.button-submit:active {
+  background-color: #1f7e51;
+  box-shadow: 0 3px 0 #1f7e51 inset;
+}
+
+.button-login {
+  background-color: #333;
+}
+
+.button-login:hover {
+  background-color: #222;
+}
+
+.button-login:active {
+  background-color: #000;
+  box-shadow: 0 3px 0 #000 inset;
+}
+
+
+
+
