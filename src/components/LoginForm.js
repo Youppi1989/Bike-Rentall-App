@@ -1,61 +1,44 @@
 import React, { useState } from "react";
-import { signIn } from "./Api.js";
 import { useNavigate } from "react-router-dom";
-import { createCase } from "./Api.js";
+import { signIn } from "./Api";
 
 const LoginForm = () => {
   const navigate = useNavigate();
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
-  const [error, setError] = useState("");
+  const [error, setError] = useState(null);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    // Create the credentials object
+    const credentials = {
+      email: e.target.email.value,
+      password: e.target.password.value,
+    };
 
     try {
-      const credentials = {
-        email: email,
-        password: password,
-      };
-
-      await signIn(credentials);
-      navigate("/"); // Redirect to the home page after successful login
+      // Call the API to authenticate the user
+      const response = await signIn(credentials);
+      // Handle the response, e.g., store the token in localStorage
+      localStorage.setItem("token", response.token);
+      navigate("/");
     } catch (error) {
-      setError(error.message);
+      setError("Неверный адрес электронной почты или пароль");
+      console.log("Error authenticating user:", error.message);
     }
-  };
-
-  const handleEmailChange = (e) => {
-    setEmail(e.target.value);
-  };
-
-  const handlePasswordChange = (e) => {
-    setPassword(e.target.value);
   };
 
   return (
     <form className="form" onSubmit={handleSubmit}>
       <h2>Войти в учетную запись</h2>
-      {error && <p className="error-message">{error}</p>}
       <label>
         E-mail:
-        <input
-          type="email"
-          value={email}
-          onChange={handleEmailChange}
-          required
-        />
+        <input type="email" name="email" required />
       </label>
       <label>
         Пароль:
-        <input
-          type="password"
-          value={password}
-          onChange={handlePasswordChange}
-          required
-        />
+        <input type="password" name="password" required />
       </label>
       <button type="submit">Войти</button>
+      {error && <p>{error}</p>}
     </form>
   );
 };

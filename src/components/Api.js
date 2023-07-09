@@ -3,7 +3,6 @@ import axios from "axios";
 const API_BASE_URL = "https://sf-final-project-be.herokuapp.com/api";
 
 const getToken = () => {
-  // Получение токена из localStorage
   const token = localStorage.getItem("token");
   if (!token) {
     throw new Error("Токен авторизации не найден");
@@ -23,7 +22,6 @@ axios.interceptors.request.use(
   }
 );
 
-// Запрос для создания новой учетной записи в системе
 export const signUp = async (userData) => {
   try {
     const response = await axios.post(`${API_BASE_URL}/auth/sign_up`, userData);
@@ -33,7 +31,6 @@ export const signUp = async (userData) => {
   }
 };
 
-// Запрос для авторизации существующего пользователя
 export const signIn = async (credentials) => {
   try {
     const response = await axios.post(
@@ -46,7 +43,6 @@ export const signIn = async (credentials) => {
   }
 };
 
-// Запрос для проверки действительности токена
 export const verifyToken = async () => {
   try {
     const response = await axios.get(`${API_BASE_URL}/auth`);
@@ -56,7 +52,6 @@ export const verifyToken = async () => {
   }
 };
 
-// Запрос для создания нового сообщения о краже (доступен без авторизации)
 export const createTheftReport = async (theftReportData) => {
   try {
     const response = await axios.post(
@@ -69,7 +64,6 @@ export const createTheftReport = async (theftReportData) => {
   }
 };
 
-// Запрос для создания нового сообщения о краже
 export const createCase = async (caseData) => {
   try {
     const response = await axios.post(`${API_BASE_URL}/cases`, caseData);
@@ -79,7 +73,6 @@ export const createCase = async (caseData) => {
   }
 };
 
-// Запрос для редактирования сообщения о краже
 export const updateCase = async (caseId, caseData) => {
   try {
     const response = await axios.put(
@@ -92,7 +85,6 @@ export const updateCase = async (caseId, caseData) => {
   }
 };
 
-// Запрос на удаление сообщения о краже
 export const deleteCase = async (caseId) => {
   try {
     const response = await axios.delete(`${API_BASE_URL}/cases/${caseId}`);
@@ -102,7 +94,6 @@ export const deleteCase = async (caseId) => {
   }
 };
 
-// Запрос на получение всех сообщений о краже
 export const getAllCases = async () => {
   try {
     const response = await axios.get(`${API_BASE_URL}/cases`);
@@ -112,7 +103,6 @@ export const getAllCases = async () => {
   }
 };
 
-// Запрос на получение информации по конкретному сообщению о краже
 export const getCaseById = async (caseId) => {
   try {
     const response = await axios.get(`${API_BASE_URL}/cases/${caseId}`);
@@ -122,7 +112,6 @@ export const getCaseById = async (caseId) => {
   }
 };
 
-// Запрос для создания нового сотрудника
 export const createOfficer = async (officerData) => {
   try {
     const response = await axios.post(`${API_BASE_URL}/officers`, officerData);
@@ -132,7 +121,6 @@ export const createOfficer = async (officerData) => {
   }
 };
 
-// Запрос на редактирование сотрудника по id
 export const updateOfficer = async (officerId, officerData) => {
   try {
     const response = await axios.put(
@@ -145,7 +133,6 @@ export const updateOfficer = async (officerId, officerData) => {
   }
 };
 
-// Запрос на удаление сотрудника
 export const deleteOfficer = async (officerId) => {
   try {
     const response = await axios.delete(
@@ -157,7 +144,6 @@ export const deleteOfficer = async (officerId) => {
   }
 };
 
-// Запрос для получения списка всех сотрудников
 export const getAllOfficers = async () => {
   try {
     const response = await axios.get(`${API_BASE_URL}/officers`);
@@ -167,7 +153,6 @@ export const getAllOfficers = async () => {
   }
 };
 
-// Запрос для получения информации по конкретному сотруднику
 export const getOfficerById = async (officerId) => {
   try {
     const response = await axios.get(`${API_BASE_URL}/officers/${officerId}`);

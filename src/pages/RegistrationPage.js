@@ -1,8 +1,13 @@
 import React from "react";
 
 const RegistrationPage = () => {
+  const handleRegistration = (e) => {
+    e.preventDefault();
+    // Perform registration logic here
+  };
+
   return (
-    <form>
+    <form onSubmit={handleRegistration}>
       <h2>Регистрация</h2>
       <label>
         E-mail:
@@ -24,7 +29,7 @@ const RegistrationPage = () => {
         Client ID:
         <input type="text" required />
       </label>
-      {/* Добавьте кнопку "Зарегистрировать" */}
+      <button type="submit">Зарегистрировать</button>
     </form>
   );
 };
