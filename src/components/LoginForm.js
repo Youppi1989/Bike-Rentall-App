@@ -1,33 +1,30 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { signIn } from "./Api";
+import { signIn } from "../components/Api";
 
 const LoginForm = () => {
   const navigate = useNavigate();
   const [error, setError] = useState(null);
 
-  const handleSubmit = async (e) => {
+  const handleLogin = async (e) => {
     e.preventDefault();
-    // Create the credentials object
     const credentials = {
       email: e.target.email.value,
       password: e.target.password.value,
     };
 
     try {
-      // Call the API to authenticate the user
       const response = await signIn(credentials);
-      // Handle the response, e.g., store the token in localStorage
-      localStorage.setItem("token", response.token);
+      localStorage.setItem("token", response.data.token);
       navigate("/");
     } catch (error) {
       setError("Неверный адрес электронной почты или пароль");
-      console.log("Error authenticating user:", error.message);
+      console.log("Ошибка аутентификации пользователя:", error.message);
     }
   };
 
   return (
-    <form className="form" onSubmit={handleSubmit}>
+    <form className="form" onSubmit={handleLogin}>
       <h2>Войти в учетную запись</h2>
       <label>
         E-mail:

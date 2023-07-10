@@ -1,7 +1,6 @@
 import React from "react";
-import { deleteOfficer } from "./Api";
+import { deleteOfficer, updateOfficer } from "./Api";
 
-// Компонент для отображения списка ответственных сотрудников
 const ResponsibleOfficersList = ({ officers, onDelete }) => {
   const handleDelete = async (officerId) => {
     try {
@@ -12,11 +11,36 @@ const ResponsibleOfficersList = ({ officers, onDelete }) => {
     }
   };
 
+  const handleApprove = async (officerId) => {
+    try {
+      const updatedOfficer = await updateOfficer(officerId, { approved: true });
+      // Handle the response or update the UI accordingly
+    } catch (error) {
+      console.error("Ошибка при одобрении сотрудника:", error);
+    }
+  };
+
+  const handleRevoke = async (officerId) => {
+    try {
+      const updatedOfficer = await updateOfficer(officerId, {
+        approved: false,
+      });
+      // Handle the response or update the UI accordingly
+    } catch (error) {
+      console.error("Ошибка при отзыве сотрудника:", error);
+    }
+  };
+
   return (
     <ul>
       {officers.map((officer) => (
         <li key={officer.id}>
           {officer.firstName} {officer.lastName}
+          {officer.approved ? (
+            <button onClick={() => handleRevoke(officer.id)}>Отзвать</button>
+          ) : (
+            <button onClick={() => handleApprove(officer.id)}>Одобрить</button>
+          )}
           <button onClick={() => handleDelete(officer.id)}>Удалить</button>
         </li>
       ))}
@@ -25,4 +49,3 @@ const ResponsibleOfficersList = ({ officers, onDelete }) => {
 };
 
 export default ResponsibleOfficersList;
-

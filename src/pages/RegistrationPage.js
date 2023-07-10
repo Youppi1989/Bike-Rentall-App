@@ -1,6 +1,6 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
-import { signUp } from "../components/Api";
+import { signUp, createOfficer } from "../components/Api";
 
 const RegistrationPage = () => {
   const navigate = useNavigate();
@@ -18,8 +18,22 @@ const RegistrationPage = () => {
 
     try {
       // Call the API to register the user
-      await signUp(userData);
-      navigate("/responsible-officers");
+      const response = await signUp(userData);
+
+      if (response.error) {
+        console.log("Error registering user:", response.error.message);
+      } else {
+        // Create a new officer using the registered user data
+        const officerData = {
+          email: userData.email,
+          firstName: userData.firstName,
+          lastName: userData.lastName,
+          approved: userData.clientId === "first-client-id", // Automatically approve the first client
+        };
+        await createOfficer(officerData);
+
+        navigate("/responsible-officers");
+      }
     } catch (error) {
       console.log("Error registering user:", error.message);
     }
