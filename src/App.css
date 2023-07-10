@@ -1,10 +1,10 @@
 /* styles.css */
 
 body {
-  font-family: Arial, sans-serif;
+  font-family: "Courier New", Courier, monospace;
   margin: 0;
   padding: 0;
-  background-color: #03cc;
+  background-color: #ccc;
 }
 
 .container {
@@ -17,7 +17,7 @@ body {
 }
 
 h1 {
-  color: #333;
+  color: #f1f1f1;
   font-size: 24px;
   font-weight: bold;
   margin-bottom: 20px;
@@ -28,7 +28,10 @@ p {
   font-size: 16px;
   margin-bottom: 20px;
 }
-
+.p1 {
+  text-align: center;
+  color: #ffffff;
+}
 .forms {
   display: flex;
   justify-content: space-between;
@@ -55,14 +58,14 @@ p {
 
 .button {
   padding: 10px 20px;
-  background-color: #00a300;
-  color: green;
+  background-color: cadetblue;
+  color: white;
   border: none;
   cursor: pointer;
 }
 
 .button:hover {
-  background-color: #009200;
+  background-color: beige;
 }
 
 .button:disabled {
@@ -86,16 +89,15 @@ p {
 }
 
 .button-submit {
-  background-color: #00a300;
+  background-color: blue;
 }
 
 .button-submit:hover {
-  background-color: #009200;
+  background-color: blue;
 }
 
 .button-submit:active {
-  background-color: #1f7e51;
-  box-shadow: 0 3px 0 #1f7e51 inset;
+  background-color: cadetblue;
 }
 
 .button-login {
@@ -109,4 +111,58 @@ p {
 .button-login:active {
   background-color: #000;
   box-shadow: 0 3px 0 #000 inset;
+}
+.form_signup {
+  position: relative;
+  z-index: 1;
+  background: #ffffff;
+  max-width: 360px;
+  margin: 0 auto 100px;
+  padding: 45px;
+  text-align: center;
+  box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+}
+.form_input {
+  outline: 0;
+  background: #64f087;
+  width: 100%;
+  border: 0;
+  margin: 0 0 15px;
+  padding: 15px;
+  box-sizing: border-box;
+  font-size: 14px;
+  border-radius: 10rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+label {
+  font-weight: 600;
+}
+input {
+  border-radius: 10rem;
+  padding: 10px;
+  margin-left: 10px;
+  font-weight: 600;
+}
+
+.form_description {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px;
+}
+
+.form_description span {
+  display: inline-block;
+  font-weight: bold;
+}
+
+.description_text {
+  width: 240px;
+  font-weight: 600;
+  height: 50px;
+}
+
+.click_submit {
+  width: 100%;
 }
