@@ -1,9 +1,28 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
+import { signUp } from "../components/Api";
 
 const RegistrationPage = () => {
-  const handleRegistration = (e) => {
+  const navigate = useNavigate();
+
+  const handleRegistration = async (e) => {
     e.preventDefault();
-    // Perform registration logic here
+    // Create the user data object
+    const userData = {
+      email: e.target.email.value,
+      password: e.target.password.value,
+      clientId: e.target.clientId.value,
+      firstName: e.target.firstName.value,
+      lastName: e.target.lastName.value,
+    };
+
+    try {
+      // Call the API to register the user
+      await signUp(userData);
+      navigate("/responsible-officers");
+    } catch (error) {
+      console.log("Error registering user:", error.message);
+    }
   };
 
   return (
@@ -11,23 +30,23 @@ const RegistrationPage = () => {
       <h2>Регистрация</h2>
       <label>
         E-mail:
-        <input type="email" required />
+        <input type="email" name="email" required />
       </label>
       <label>
         Пароль:
-        <input type="password" required />
+        <input type="password" name="password" required />
       </label>
       <label>
         Имя:
-        <input type="text" />
+        <input type="text" name="firstName" />
       </label>
       <label>
         Фамилия:
-        <input type="text" />
+        <input type="text" name="lastName" />
       </label>
       <label>
         Client ID:
-        <input type="text" required />
+        <input type="text" name="clientId" required />
       </label>
       <button type="submit">Зарегистрировать</button>
     </form>
