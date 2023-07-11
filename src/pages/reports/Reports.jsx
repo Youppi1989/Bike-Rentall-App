@@ -24,7 +24,7 @@ const Reports = () => {
       },
     })
       .then(({ data }) => {
-        alert("запись удалена");
+        alert("Запись удалена");
       })
       .then(() => {
         Axios("/cases/", {
