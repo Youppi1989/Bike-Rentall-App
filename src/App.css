@@ -4,7 +4,6 @@ body {
   font-family: "Courier New", Courier, monospace;
   margin: 0;
   padding: 0;
-  background-color: #ccc;
 }
 
 .container {
@@ -24,7 +23,7 @@ h1 {
 }
 
 p {
-  color: #333;
+  color: white;
   font-size: 16px;
   margin-bottom: 20px;
 }
@@ -38,16 +37,16 @@ p {
 }
 
 .form {
-  width: 45%;
+  width: 300px;
   padding: 20px;
   background-color: #f1f1f1;
-  border-radius: 5px;
+  border-radius: 12px;
 }
 
 .label {
   display: block;
   margin-bottom: 10px;
-  color: #333;
+  color: white;
 }
 
 .input {
@@ -57,7 +56,7 @@ p {
 }
 
 .button {
-  padding: 10px 20px;
+  padding: 12px 15px;
   background-color: cadetblue;
   color: white;
   border: none;
@@ -89,19 +88,15 @@ p {
 }
 
 .button-submit {
-  background-color: blue;
+  background-color: aqua;
 }
 
 .button-submit:hover {
-  background-color: blue;
+  background-color: aqua;
 }
 
 .button-submit:active {
   background-color: cadetblue;
-}
-
-.button-login {
-  background-color: #333;
 }
 
 .button-login:hover {
@@ -110,27 +105,22 @@ p {
 
 .button-login:active {
   background-color: #000;
-  box-shadow: 0 3px 0 #000 inset;
 }
 .form_signup {
-  position: relative;
-  z-index: 1;
   background: #ffffff;
-  max-width: 360px;
+  max-width: 350px;
   margin: 0 auto 100px;
-  padding: 45px;
+  padding: 35px;
   text-align: center;
-  box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
 }
 .form_input {
-  outline: 0;
-  background: #64f087;
+  background-color: cadetblue;
+  font-size: 15px;
   width: 100%;
-  border: 0;
   margin: 0 0 15px;
   padding: 15px;
   box-sizing: border-box;
-  font-size: 14px;
+  font-size: 15px;
   border-radius: 10rem;
   display: flex;
   justify-content: space-between;
@@ -140,10 +130,10 @@ label {
   font-weight: 600;
 }
 input {
-  border-radius: 10rem;
+  border-radius: 12px;
   padding: 10px;
   margin-left: 10px;
-  font-weight: 600;
+  font-weight: 500;
 }
 
 .form_description {
@@ -159,10 +149,6 @@ input {
 
 .description_text {
   width: 240px;
-  font-weight: 600;
+  font-weight: 400;
   height: 50px;
-}
-
-.click_submit {
-  width: 100%;
 }

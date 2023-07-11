@@ -39,37 +39,37 @@ const Reports = () => {
   }
 
   return (
-    <div className="hero">
-      <div className="reports_wrapper">
+    <div class="hero">
+      <div class="reports_wrapper">
         <div
-          className="report"
+          class="report"
           style={{
-            backgroundColor: "#64f087",
+            backgroundColor: "#aaaa",
           }}
         >
           <div>
-            <p>Статус</p>
+            <p>Статус:</p>
           </div>
           <div>
-            <p>№ лицензии</p>
+            <p>№ лицензии:</p>
           </div>
           <div>
-            <p>ФИО</p>
+            <p>ФИО:</p>
           </div>
           <div>
-            <p>Велосипед</p>
+            <p>Велосипед:</p>
           </div>
           <div>
-            <p>Дата</p>
+            <p>Дата:</p>
           </div>
           <div>
-            <p>Цвет</p>
+            <p>Цвет:</p>
           </div>
         </div>
 
         {cases.map((data, id) => {
           return (
-            <div className="report" key={id}>
+            <div class="report" key={id}>
               <div>
                 <p>{data.status}</p>
               </div>
@@ -85,8 +85,8 @@ const Reports = () => {
               <div>
                 <button
                   onClick={() => deleteCase(data._id)}
-                  className="delete btn"
-                  style={{ background: "orange" }}
+                  class="delete btn"
+                  style={{ background: "" }}
                 >
                   Удалить
                 </button>

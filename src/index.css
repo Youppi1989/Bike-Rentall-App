@@ -8,7 +8,7 @@ body {
 }
 
 .header {
-  background-color: rgb(211, 201, 201);
+  background-color: white;
   justify-content: space-between;
   margin-top: 15px;
   margin-bottom: 15px;
@@ -20,25 +20,44 @@ body {
 
 .click {
   display: inline-block;
-  padding: 0.75rem 1rem;
-  margin: 10px;
-  border-radius: 10rem;
-  border: 0px;
+  padding: 12px;
+  margin: 15px;
+  border-radius: 12px;
   color: white;
-  font-size: 1rem;
   text-decoration: none;
-  letter-spacing: 0.15rem;
-  transition: all 0.3s;
-  position: relative;
-  overflow: hidden;
+  justify-content: center;
   cursor: pointer;
-  z-index: 1;
   font-weight: 600;
   background-color: rgb(113, 113, 220);
-  text-transform: lowercase;
-  transition-duration: 0.4s;
+  text-transform: uppercase;
 }
+.click_thief {
+  margin-top: 30px;
+  justify-content: center;
 
+  display: block;
+  padding: 12px;
+  border-radius: 12px;
+  color: white;
+  text-decoration: none;
+  cursor: pointer;
+  font-weight: 600;
+  background-color: rgb(215, 130, 99);
+  text-transform: uppercase;
+  text-align: center;
+}
+.enter {
+  display: inline-block;
+  padding: 12px;
+  margin: 15px;
+  border-radius: 12px;
+  color: white;
+  text-decoration: none;
+  cursor: pointer;
+  font-weight: 600;
+  background-color: rgb(113, 113, 220);
+  text-transform: uppercase;
+}
 button:hover,
 .click:hover {
   cursor: pointer;
@@ -48,12 +67,12 @@ button:hover,
   cursor: pointer;
 }
 
-.click_theft {
+.click_menu {
   text-decoration: none;
 }
 
 .main {
-  background-color: rgb(80, 163, 214);
+  background-color: white;
   width: auto;
   height: 400px;
   padding-bottom: 90px;
@@ -65,19 +84,18 @@ button:hover,
 .title {
   display: flex;
   justify-content: center;
-  color: aliceblue;
+  color: rgb(110, 110, 246);
 }
 
 .footer {
-  background-color: beige;
+  background-color: rgb(110, 110, 246);
   display: flex;
   justify-content: center;
   height: 100px;
-}
-
-.footer-content {
-  color: aliceblue;
-  font-size: 20px;
-  padding-top: 20px;
   text-align: center;
+  padding: 15px;
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
+  color: white;
+  text-transform: uppercase;
 }

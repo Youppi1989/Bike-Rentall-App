@@ -6,7 +6,7 @@ import axios from "axios";
 const Signup = () => {
   const [firstName, setFirstName] = useState("firstname");
   const [lastName, setLastName] = useState("lastname");
-  const [email, setEmail] = useState("test@test.com");
+  const [email, setEmail] = useState("trotsenk_nik@mail.ru");
   const [password, setPassword] = useState("12345");
 
   const registrationHandler = (e) => {
@@ -36,10 +36,10 @@ const Signup = () => {
         <form
           onSubmit={(e) => registrationHandler(e)}
           action="#"
-          className="form_signup"
+          class="form_signup"
         >
           <div className="form_input form_email">
-            <label for="email">E-mail*</label>
+            <label for="email">E-mail:</label>
             <input
               value={email}
               onChange={(e) => {
@@ -50,7 +50,7 @@ const Signup = () => {
             />
           </div>
           <div className="form_input form_password">
-            <label for="password">Пароль*</label>
+            <label for="password">Пароль:</label>
             <input
               onChange={(e) => {
                 setPassword(e.target.value);
@@ -61,7 +61,7 @@ const Signup = () => {
             />
           </div>
           <div className="form_input form_first_name">
-            <label for="first_name">Имя</label>
+            <label for="first_name">Имя:</label>
             <input
               onChange={(e) => {
                 setFirstName(e.target.value);
@@ -71,8 +71,8 @@ const Signup = () => {
               name="first_name"
             />
           </div>
-          <div className="form_input form_last_name">
-            <label for="last_name">фамилия</label>
+          <div class="form_input form_last_name">
+            <label for="last_name">Фамилия:</label>
             <input
               onChange={(e) => {
                 setLastName(e.target.value);
@@ -82,8 +82,8 @@ const Signup = () => {
               name="last_name"
             />
           </div>
-          <div className="form_input form_client-id">
-            <label for="client-id">Client ID*</label>
+          <div class="form_input form_client-id">
+            <label for="client-id">Client ID:</label>
             <input
               value="bff396d9-12dc-4ca9-87a4-eda59e8d247f"
               type="text"
@@ -95,7 +95,7 @@ const Signup = () => {
               width: "100%",
               padding: "20px",
             }}
-            className="btn"
+            class="click"
           >
             Зарегистрироваться
           </button>

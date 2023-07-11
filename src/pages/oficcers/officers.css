@@ -17,7 +17,7 @@
   font-size: 18px;
   color: white;
   padding: 20px;
-  background-color: darkblue;
+  background-color: rgb(113, 63, 113);
   margin-bottom: 20px;
   border-radius: 10px;
 }
@@ -40,6 +40,6 @@
   height: 40px;
   font-weight: bold;
   color: white;
-  background-color: orange;
+  background-color: rgb(113, 113, 220);
   border-radius: 10px;
 }

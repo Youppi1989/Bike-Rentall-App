@@ -44,10 +44,10 @@ const ReportCreate = () => {
       }
     },
     {
-      licenseId: "123321",
-      name: "Велик",
+      licenseId: "",
+      name: "",
       vel_type: "general",
-      color: "Зеленый",
+      color: "",
       date: "2023.01.01",
       description: "",
     }
@@ -71,12 +71,12 @@ const ReportCreate = () => {
       },
     })
       .then(({ data }) => {
-        alert("запись создана");
+        alert("Запись создана");
         console.log(values);
       })
       .catch((e) => {
         console.log(e.message);
-        alert("не удалось создать запис");
+        alert("Не удалось создать запись");
       });
   }
 
@@ -88,7 +88,7 @@ const ReportCreate = () => {
         className="form_signup"
       >
         <div className="form_input form_license_number">
-          <label for="license_number">Номер лицензии*</label>
+          <label for="license_number">Номер лицензии</label>
           <input
             value={values.licenseId}
             onChange={(e) => {
@@ -99,7 +99,7 @@ const ReportCreate = () => {
           />
         </div>
         <div className="form_input form_full_name">
-          <label for="full_name">ФИО*</label>
+          <label for="full_name">ФИО:</label>
           <input
             onChange={(e) => {
               setValues({ type: "rename", name: e.target.value });
@@ -115,7 +115,7 @@ const ReportCreate = () => {
           }}
           className="form_input form_first_name"
         >
-          <label for="type">Тип велосипеда</label>
+          <label for="type">Тип велосипеда:</label>
           <select
             name="type"
             onChange={(e) => {
@@ -123,12 +123,13 @@ const ReportCreate = () => {
             }}
             className="form_input"
           >
-            <option value="general">"General"</option>
-            <option value="sport">"Sport"</option>
+            <option value="general">"Классический"</option>
+            <option value="sport">"Спортивный"</option>
+            <option value="sport">"Горный"</option>
           </select>
         </div>
         <div className="form_input form_color">
-          <label for="color">Цвет</label>
+          <label for="color">Цвет:</label>
           <input
             onChange={(e) => {
               setValues({ type: "change_color", color: e.target.value });
@@ -150,8 +151,8 @@ const ReportCreate = () => {
             name="date"
           />
         </div>
-        <div className="form_input form_description">
-          <span>Описание</span>
+        <div class="form_input form_description">
+          <span>Описание: </span>
           <textarea
             style={{}}
             value={values.description}
@@ -166,9 +167,7 @@ const ReportCreate = () => {
             name="description"
           ></textarea>
         </div>
-        <button className="btn btn_submit" type="submit">
-          Отправить
-        </button>
+        <button class="click">Отправить</button>
       </form>
     </div>
   );

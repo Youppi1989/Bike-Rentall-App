@@ -38,10 +38,10 @@ const Auth = () => {
   return (
     <main>
       {user ? <Navigate to="/"></Navigate> : null}
-      <div className="hero">
-        <form onSubmit={(e) => getAuth(e)} action="#" className="form_signup">
-          <div className="form_input form_email">
-            <label for="email">E-mail*</label>
+      <div class="hero">
+        <form onSubmit={(e) => getAuth(e)} action="#" class="form_signup">
+          <div class="form_input form_email">
+            <label for="email">E-mail:</label>
             <input
               placeholder="почта"
               onChange={(e) => {
@@ -53,8 +53,8 @@ const Auth = () => {
               required
             />
           </div>
-          <div className="form_input form_password">
-            <label for="password">Пароль*</label>
+          <div class="form_input form_password">
+            <label for="password">Пароль:</label>
             <input
               onChange={(e) => {
                 setPassword(e.target.value);
@@ -70,8 +70,8 @@ const Auth = () => {
             style={{
               width: "100%",
             }}
-            className="btn"
-            type="submit"
+            class="click"
+        
           >
             Войти
           </button>
