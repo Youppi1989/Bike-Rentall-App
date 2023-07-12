@@ -1,0 +1,17 @@
+.footer {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 60px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color: aliceblue;
+    width: 100%;
+    background-color: rgb(98, 194, 98);
+  }
+  @media (max-width: 700px) {
+    .footer {
+      background-color: chartreuse;
+      justify-content: flex-end;
+    }
+  }
+  

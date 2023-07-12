@@ -1,0 +1,48 @@
+* {
+  text-align: center;
+}
+
+.container {
+  margin: 20px auto;
+  max-width: 720px;
+}
+
+.container-main {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-control {
+  width: 50%;
+  height: 40px;
+  padding: 12px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+  border-radius: 16px;
+}
+.form-label {
+  padding: 10px;
+}
+.spinner-border {
+  margin-top: 50px;
+}
+
+.text {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 15px;
+  text-transform: uppercase;
+}
+
+.button {
+  background-color: aliceblue;
+  border: 0vmin;
+  border-radius: 14px;
+  color: darkgreen;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  text-overflow: inherit;
+}

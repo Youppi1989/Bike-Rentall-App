@@ -1,0 +1,28 @@
+.header {
+  min-height: 100px;
+  width: 100%;
+  background-color: rgb(98, 194, 98);
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 23px;
+}
+
+.header > h1 {
+  font-weight: 400;
+  font-size: 28px;
+}
+.logo {
+  width: 130px;
+  height: 130px;
+}
+@media (max-width: 700px) {
+  .header {
+    background-color: #112d49;
+    justify-content: flex-end;
+  }
+  .header > h1 {
+    display: none;
+  }
+}
