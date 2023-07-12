@@ -10,7 +10,7 @@ function Header() {
     <header class={styles.header}>
       <img class={styles.logo} src={logoImage} alt="Logo" />
       <Link to="/">
-        <button class="button">Главная страница</button>
+        <button class="button_main">Главная страница</button>
       </Link>
       {store.isAuth ? (
         <>
